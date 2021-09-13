@@ -18,7 +18,6 @@ def mutate(module: dict, module_used: str):
     }
 
     mutated_module = mutate(actual_service, service_params)
-    print(mutated_module)
 
 
     Return
@@ -43,7 +42,6 @@ def mutate(module: dict, module_used: str):
     mutated_module = module
     mutated_module[param_to_mutate] = mutated_value
 
-    print('Mutated')
     return mutated_module
 
 
