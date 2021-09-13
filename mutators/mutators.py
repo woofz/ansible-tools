@@ -3,23 +3,18 @@ import random
 
 def mutate(module: dict, module_used: str):
     """ Mutate a module and return it.
-
     Example:
     -------
     service_params = {
         'state': ['started', 'stopped', 'reloaded', 'restarted'],
         'enabled': ['no', 'yes'],
     }
-
     actual_service = {
         'name': 'ciao',
         'state': 'reloaded',
         'enabled': 'no'
     }
-
     mutated_module = mutate(actual_service, service_params)
-
-
     Return
     ------
         mutated_module: dict - the mutated module
@@ -48,53 +43,53 @@ def mutate(module: dict, module_used: str):
 module_parameters = {
     'service': {
         'state': ['started', 'stopped', 'reloaded', 'restarted'],
-        'enabled': [False, True],
+        'enabled': ['no', 'yes'],
     },
 
     'set_fact': {
-        'cacheable': [False, True],
+        'cacheable': ['no', 'yes'],
     },
 
     'shell': {
-        'stdin_add_newline ': [False, True],
+        'stdin_add_newline ': ['no', 'yes'],
     },
 
     'command': {
-        'stdin_add_newline ': [False, True],
-        'strip_empty_ends': [False, True],
-        'warn': [False, True],
+        'stdin_add_newline ': ['no', 'yes'],
+        'strip_empty_ends': ['no', 'yes'],
+        'warn': ['no', 'yes'],
     },
 
     'template': {
-        'backup': [False, True],
-        'follow': [False, True],
-        'force': [True, False],
-        'lstrip_blocks': [True, False],
-        'newline_sequence': [True, False],
-        'trim_blocks': [True, False],
-        'unsafe_writes': [True, False],
+        'backup': ['no', 'yes'],
+        'follow': ['no', 'yes'],
+        'force': ['no', 'yes'],
+        'lstrip_blocks': ['no', 'yes'],
+        'newline_sequence': ['no', 'yes'],
+        'trim_blocks': ['no', 'yes'],
+        'unsafe_writes': ['no', 'yes'],
     },
 
     'file': {
-        'follow': [True, False],
-        'force': [True, False],
-        'recurse': [True, False],
-        'unsafe_writes': [True, False],
+        'follow': ['no', 'yes'],
+        'force': ['no', 'yes'],
+        'recurse': ['no', 'yes'],
+        'unsafe_writes': ['no', 'yes'],
         'state': ['absent', 'directory', 'file', 'hard', 'link', 'touch'],
     },
 
     'copy': {
-        'backup': [True, False],
-        'decrypt': [True, False],
-        'follow': [True, False],
-        'force': [True, False],
-        'local_follow': [True, False],
-        'remote_src': [True, False],
-        'unsafe_writes': [True, False],
+        'backup': ['no', 'yes'],
+        'decrypt': ['no', 'yes'],
+        'follow': ['no', 'yes'],
+        'force': ['no', 'yes'],
+        'local_follow': ['no', 'yes'],
+        'remote_src': ['no', 'yes'],
+        'unsafe_writes': ['no', 'yes'],
     },
 
     'gather_facts': {
-        'parallel': [True, False],
+        'parallel': ['no', 'yes'],
     },
 
     'fail': {},
