@@ -8,8 +8,10 @@ import json
 def get_module_parameters(module_name):
     """ Given module name, this function retrieves module's parameters from official ansible documentation """
 
-    url = f'https://docs.ansible.com/ansible/latest/collections/ansible/builtin/{module_name}_module.html#' \
-          f'{module_name}-module'
+    #url = f'https://docs.ansible.com/ansible/latest/collections/ansible/builtin/{module_name}_module.html#' \
+    #      f'{module_name}-module'
+    url = f'https://web.archive.org/web/20211017172704/http://docs.ansible.com/ansible/latest/collections/ansible/builtin/' \
+          f'{module_name}_module.html#{module_name}-module' # Hot Fix...
     content = requests.get(url).content.decode()
     params = list(re.findall(r'parameter-(\w+)\"', content))
     params = list(dict.fromkeys(params))
