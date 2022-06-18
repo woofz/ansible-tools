@@ -127,3 +127,15 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Main.py
+main.py
+
+# PyCharm IDE & other stuff
+.idea/
+*.csv
+.pkl
+
+# Manual test stuff
+tasks.py
+build_tokens.py
